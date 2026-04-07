@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CareerCue | Get Hired. Get Ahead.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#dae2fd",
+                        "secondary-fixed-dim": "#ccd4ee",
+                        "on-error-container": "#510017",
+                        "primary-fixed-dim": "#9680ff",
+                        "surface-container-highest": "#d9dde0",
+                        "on-tertiary": "#e2f6ff",
+                        "inverse-primary": "#937dff",
+                        "tertiary-container": "#00cffc",
+                        "surface-tint": "#5d3fd3",
+                        "on-primary-fixed-variant": "#2c008f",
+                        "on-tertiary-fixed-variant": "#004a5c",
+                        "on-primary-fixed": "#000000",
+                        "surface": "#f5f7f9",
+                        "on-primary-container": "#230076",
+                        "on-surface": "#2c2f31",
+                        "error": "#b41340",
+                        "primary": "#5d3fd3",
+                        "on-secondary-fixed-variant": "#535b71",
+                        "on-secondary-container": "#4a5167",
+                        "secondary-fixed": "#dae2fd",
+                        "tertiary-dim": "#00576c",
+                        "surface-variant": "#d9dde0",
+                        "on-primary": "#f6f0ff",
+                        "inverse-surface": "#0b0f10",
+                        "outline-variant": "#abadaf",
+                        "surface-container-low": "#eef1f3",
+                        "outline": "#747779",
+                        "secondary": "#535b71",
+                        "tertiary-fixed": "#00cffc",
+                        "error-container": "#f74b6d",
+                        "secondary-dim": "#484f65",
+                        "tertiary": "#00647b",
+                        "on-secondary": "#f0f2ff",
+                        "primary-fixed": "#a391ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#004050",
+                        "surface-container": "#e5e9eb",
+                        "primary-container": "#a391ff",
+                        "on-error": "#ffefef",
+                        "on-background": "#2c2f31",
+                        "on-secondary-fixed": "#373f54",
+                        "surface-bright": "#f5f7f9",
+                        "surface-container-high": "#dfe3e6",
+                        "on-tertiary-fixed": "#002a35",
+                        "tertiary-fixed-dim": "#00c0ea",
+                        "error-dim": "#a70138",
+                        "surface-dim": "#d0d5d8",
+                        "primary-dim": "#5130c6",
+                        "inverse-on-surface": "#9a9d9f",
+                        "background": "#f5f7f9",
+                        "on-surface-variant": "#595c5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f7f9;
+        }
+
+        .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 20% 50%, rgba(81, 48, 198, 0.15) 0%, transparent 50%), linear-gradient(135deg, #5130c6 0%, #5d3fd3 100%);
+        }
+    </style>
+</head>
+
+<body class="text-on-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm font-['Plus_Jakarta_Sans'] antialiased">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-12">
+                <span class="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50">CareerCue</span>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-violet-600 dark:text-violet-400 font-semibold border-b-2 border-violet-600 pb-1"
+                        href="#">Jobs</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                        href="#">Courses</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                        href="#">Articles</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                        href="#">Mentors</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative hidden lg:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                    <input id="global-search"
+                        class="pl-10 pr-4 py-2 bg-slate-100/50 dark:bg-slate-800/50 border-none rounded-full text-sm focus:ring-2 focus:ring-violet-600 transition-all w-64"
+                        placeholder="Search opportunities..." type="text" />
+                </div>
+                <div class="flex items-center gap-4">
+                    <button id="btn-signin"
+                        class="text-slate-600 dark:text-slate-400 font-medium hover:text-slate-900 active:scale-95 transition-transform px-4">Sign
+                        In</button>
+                    <button id="btn-post-job"
+                        class="bg-violet-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-violet-700 active:scale-95 transition-transform shadow-md shadow-violet-200">Post
+                        a Job</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-24 px-8 text-on-primary relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div
+                class="inline-flex items-center gap-2 bg-tertiary-container/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-tertiary-container/30 mb-8">
+                <span class="material-symbols-outlined text-tertiary-fixed text-sm"
+                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span class="text-xs font-bold tracking-widest uppercase text-tertiary-fixed">Verified Govt Jobs</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold font-headline leading-tight max-w-4xl mb-8">
+                GET HIRED. <br />
+                <span class="text-tertiary-fixed">GET AHEAD.</span>
+            </h1>
+            <p class="text-xl text-on-primary/80 max-w-2xl mb-12 leading-relaxed">
+                Unlock your potential with premium curated roles, expert-led certifications, and a community designed
+                for the next generation of industry leaders.
+            </p>
+            <div
+                class="bg-surface-container-lowest/90 backdrop-blur-xl p-2 rounded-full flex flex-col md:flex-row items-center gap-2 max-w-3xl shadow-2xl shadow-primary-dim/20">
+                <div class="flex items-center px-6 gap-3 flex-1 border-r border-outline-variant/20">
+                    <span class="material-symbols-outlined text-primary">work</span>
+                    <input id="search-job-title"
+                        class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-outline"
+                        placeholder="Job title or keywords" type="text" />
+                </div>
+                <div class="flex items-center px-6 gap-3 flex-1">
+                    <span class="material-symbols-outlined text-primary">location_on</span>
+                    <input id="search-job-location"
+                        class="bg-transparent border-none focus:ring-0 text-on-surface w-full placeholder:text-outline"
+                        placeholder="Location" type="text" />
+                </div>
+                <button id="search-job-btn"
+                    class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold hover:bg-primary-dim transition-all active:scale-95">Find
+                    Jobs</button>
+            </div>
+            <div class="mt-12 flex flex-wrap gap-4 text-sm text-on-primary/60">
+                <span>Popular:</span>
+                <a class="hover:text-tertiary-fixed transition-colors underline decoration-tertiary-fixed/30 underline-offset-4"
+                    href="#">Frontend Engineer</a>
+                <a class="hover:text-tertiary-fixed transition-colors underline decoration-tertiary-fixed/30 underline-offset-4"
+                    href="#">Product Designer</a>
+                <a class="hover:text-tertiary-fixed transition-colors underline decoration-tertiary-fixed/30 underline-offset-4"
+                    href="#">Data Analyst</a>
+            </div>
+        </div>
+        <!-- Decorative Elements -->
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none">
+            <span class="material-symbols-outlined text-[400px]">hub</span>
+        </div>
+    </section>
+    <!-- Trusted By -->
+    <section class="bg-surface-container-low py-12 px-8">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+            <span class="text-sm font-bold tracking-widest uppercase text-outline">Trusted by industry leaders</span>
+            <div class="flex flex-wrap justify-center gap-12 md:gap-20">
+                <img alt="Google" class="h-8" data-alt="Google company logo in minimalist black and white style"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn1S0D3d-hfA6o1tGsRiLunERdGe7i_aGimMiQ9zLZe3t5V-GUtcWnftZw12e-4EGGvt0iXpvMXjQ8_XHJBDe3h0440jU7S6B2Ml-ujDY1wLPm3UNwbSXmyPSQQVtmCeO-kRbVCfYUAmjyvoeUqE6mC2q_BYZRyjoKdCA5ALbspOCYHVgFykM8GYNL00o2dDUhUMNEFj3NxAPaKKhcbdlOs13y4u41fFVnDSR1Jj8R1jjt7b2-DIWH8vpUufkPw4H3a1eCjLvYeTc" />
+                <img alt="Microsoft" class="h-8" data-alt="Microsoft company logo in minimalist black and white style"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtdddOF--Wcb6sccDz0EWkxwBY99SewRTsPgzQ7SKLHWClG7SZVxwVg0KxRln0z8VejqHvC8iXpgiiQuwGSC9vpgT_TkSLNSVgf-sLDj7ij0lCGhpWBBF6V0SpvUnamYEot6KNo93NRH6NM2OAkcZ-Yu6eQPO3V88WGarU6MV0IB5Cx_3EhF4NyFfmzlmtDiFcq0NGgWeCcW4jv6nkunZDjvldczLj-Re48vQ8_8lukv9JxNWYbEsR4xs5CNdoi-im4J4s-oMSfkc" />
+                <img alt="Amazon" class="h-8" data-alt="Amazon company logo in minimalist black and white style"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFbtEL3ulPa4BAQH0LxR3lcRL8Gl6ayKmOWWk6_oDIYI6sXvifWlT2g7b6qATIdUxv9O-hd2-BtCxh5xDe4s3LGbpDWwVvGOqTC3-RBwlnyCHtPUlEAEKptbe2hEk9xPHqvaavTWqObvoiMJoeYrHCJA8Kf-W8NCB-2gKNdHcF0bnFwiFn5MDkM3a7kiZOgQf4HLgJexWJ-US8dzTT1hYcw2f2jyiAJjab38kNhGrjsK0RSkj5zwSkH3X5kulIMRKFu1zSP96y8sc" />
+                <img alt="Adobe" class="h-8" data-alt="Adobe company logo in minimalist black and white style"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmW_hRCpB47IqrEY4Icc6ESIDlRoZOXbE2IwriVjSj0-4nYhEG19JYsjcvHpFMd4tZw61yfrDjoy9g8xfu6NrELLQWBQhvzxZGRpKbYUftlWdF3sVoELqxsCma4wheYUe06U96M3ekzF7iFNM_L86JWN7BPePV19kHew0gRFyyV05mMxFpAR8pA8Llzvxuh6O7ppROfWCIx69YDUpEP-FJDqQFcSVrc11jX8cuTepy4x5F9HSDJpDRHVAq7nFxguCIFK4jz_818FM" />
+                <img alt="Meta" class="h-8" data-alt="Meta company logo in minimalist black and white style"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUY4mWgdJdZgL_5zYCsJ2FMJTwVETL5qsYnuEtRxXZU71pYlgvCX0V9RuULE1leG2KpHseYKUK9D48Es4GjVN-5e055rtTsy2DvTIxPgiydlbCxF7ZKekI1MD5aHeWsIPpVJzVjtdEbRNzE4iqfUIl4nskOwc1mX4YBQOcTfChONtGyfkxs1YFC6eKCEMPZgzpPLfQRV3AfmyQPjGcccE376-ssyWEtN76Bvie7J9_XHS89XvSHRc1MNTyxPkWiwNaKhW9Ua78BYk" />
+            </div>
+        </div>
+    </section>
+    <!-- Premium Career Hub (Courses) -->
+    <section class="py-24 px-8 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold font-headline text-on-surface mb-4">Premium Career Hub</h2>
+                    <p class="text-on-surface-variant max-w-xl">Upskill with industry-recognized certifications and
+                        interactive masterclasses led by world-class mentors.</p>
+                </div>
+                <a class="text-primary font-bold flex items-center gap-2 group" href="#">
+                    View All Courses
+                    <span
+                        class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="courses-container">
+                <!-- Course Card 1 -->
+                <div
+                    class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="A clean top-down view of a laptop with code on the screen and coffee nearby in a bright modern workspace"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPnsjix1mYJ6UzuVvB656E26RQn8yqnPUOdLgZksbjdmeJB_U_qSUpKvnb8mb249vgjUtOl4Zja0SDPaZ0EW1Ag1Y4mMZyzZiS-Ih__PLJnCxKXm9_qcSsnrk-RP0v-wCLEc3tuslhby8iMGb1GUCRh2puwsRJV-gkOEQ96GqY2e6NXUfJva_FN3Vcbn64BZcIvYMxRXUlwcc1C3p8bl3oh3nuGzSBKhOBzpjdMrMmClodqwTyZWv_at5x5Km8sg0pllSW8M4nRro" />
+                        <div
+                            class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                            Bestseller</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-tertiary text-sm"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold">4.9 (2.4k reviews)</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-headline mb-2">HTML5 Mastery: Semantic Web</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">Build modern, accessible websites with the
+                            latest HTML5 standards and best practices.</p>
+                        <div class="flex items-center justify-between pt-6 border-t border-surface-container">
+                            <span class="text-2xl font-bold text-on-surface">$49.99</span>
+                            <div class="flex gap-2">
+                                <button
+                                    class="p-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+                                    <span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+                                </button>
+                                <button
+                                    class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-primary-dim transition-all">Buy
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 2 -->
+                <div
+                    class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="High-end professional lighting over a designer's desk with large monitors showing abstract color gradients"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCArpjIl_1_CSLQl8h2BIZgHIC2EPmLecKJabuR1SG8ds4K8urr0YspX_4YETiTri4MiAZdod2T2xuZVhzJaO1GwHQ8BmHcPDtsD9Tl5FUsgYFjnWYx0MArz2uoh1bsnj7bfUjdcrClZiL2o7FKUDgB6arcvsMHr1zB1YEJn5K5fffexRyqo_pRNhAuUQiKudL2aidvl-Bq2D8cuO54XR6-YbSHSOrWel3uHzifTmKtb6HnH2SIovF3Cj46HwJRcLcpG_pNMUzsk-8" />
+                        <div
+                            class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                            Premium</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-tertiary text-sm"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold">4.8 (1.8k reviews)</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-headline mb-2">Advanced CSS3 Layouts</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">Master Grid, Flexbox, and complex animations to
+                            create stunning editorial experiences.</p>
+                        <div class="flex items-center justify-between pt-6 border-t border-surface-container">
+                            <span class="text-2xl font-bold text-on-surface">$59.99</span>
+                            <div class="flex gap-2">
+                                <button
+                                    class="p-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+                                    <span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+                                </button>
+                                <button
+                                    class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-primary-dim transition-all">Buy
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Course Card 3 -->
+                <div
+                    class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            data-alt="Cinematic shot of a programmer working in a dark room with purple neon backlight and code reflections on glasses"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjeiO7HROO32DXQ6MF_Ma-PeqTanulcvZQjdV0Cs8KMLQ83PRF1VfoTHMIabzMI2eYY_4N7cHDKrHvI0DfkBO9WyL7DhUfIoVvdjdt6WzNyjXLkxHedMjfbXCeAxiOiy8lkAKV-pU_r5r37sCAvTzvMqThwpck6FfDGcdehn56aXunCn7XDZFZmAcA3P1hf6gVMBSq_dEIUSzrd22qYD8mDIJnJeiXp-3lpYWEc4COiL_PMYmoOzV0mLEnJuP4d1ZVjuj2wacW9Lg" />
+                        <div
+                            class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+                            Masterclass</div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="material-symbols-outlined text-tertiary text-sm"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="text-sm font-semibold">5.0 (920 reviews)</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-headline mb-2">Java Master Class 2024</h3>
+                        <p class="text-sm text-on-surface-variant mb-6">A comprehensive deep-dive into enterprise-grade
+                            Java development and architecture.</p>
+                        <div class="flex items-center justify-between pt-6 border-t border-surface-container">
+                            <span class="text-2xl font-bold text-on-surface">$89.99</span>
+                            <div class="flex gap-2">
+                                <button
+                                    class="p-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors">
+                                    <span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+                                </button>
+                                <button
+                                    class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-primary-dim transition-all">Buy
+                                    Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Job Feed Section -->
+    <section class="py-24 px-8 bg-surface-container-low">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-12 gap-8">
+                <h2 class="text-3xl font-bold font-headline">Latest Opportunities</h2>
+                <div class="flex bg-surface-container rounded-full p-1 border border-outline-variant/10">
+                    <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-semibold text-sm">All
+                        Opportunities</button>
+                    <button
+                        class="text-on-surface-variant px-6 py-2 rounded-full font-semibold text-sm hover:text-on-surface transition-colors">Govt
+                        Jobs</button>
+                    <button
+                        class="text-on-surface-variant px-6 py-2 rounded-full font-semibold text-sm hover:text-on-surface transition-colors">Private</button>
+                    <button
+                        class="text-on-surface-variant px-6 py-2 rounded-full font-semibold text-sm hover:text-on-surface transition-colors">Remote</button>
+                </div>
+            </div>
+            <div class="space-y-4" id="jobs-container">
+                <!-- Job Listing Item 1 -->
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-primary/10">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-surface-container rounded-xl flex items-center justify-center p-3">
+                            <img alt="Google" class="w-full h-full object-contain" data-alt="Google company logo"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUAhr2MmFqxV73o0Zzf4vpTyl3SpsnaOGklVvA0OxbSCZMTMlJC7afp_9W7hvU4TOx7-kCgI-sKDZo_Bxx_Jt9o4JJDSBYzcEWkw4Kpdr1YFfGaXTgecdpREGSrszTSFe4QU0y0ST9eDBwD_P1Tqr6COIUvuAHSZ73c8UghxxF-iXO0A4BkxjOJ61PIMD72dUstMK5jHdFAxiPxCfsHfl8MH2nTmZ9r6YgdR_7va81lxtNmt5n01k1ViUCFKyHgcnI-mDucBrSa9s" />
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold group-hover:text-primary transition-colors">Senior Software
+                                Engineer, Google Cloud</h4>
+                            <div class="flex flex-wrap gap-4 mt-2">
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">location_on</span> Mountain View, CA
+                                </span>
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">payments</span> $180k - $240k
+                                </span>
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 2 days ago
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="bg-tertiary-container/10 text-tertiary font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Full
+                            Time</span>
+                        <button
+                            class="border border-primary text-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-primary hover:text-on-primary transition-all">Apply
+                            Now</button>
+                    </div>
+                </div>
+                <!-- Job Listing Item 2 -->
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-primary/10">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-surface-container rounded-xl flex items-center justify-center p-3">
+                            <img alt="Gov" class="w-full h-full object-contain"
+                                data-alt="United States government seal icon"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqo-758nllXGYP-59AzuiBNsUryYkuJcQMxGrqX1MDVM6gFMWT1u9ib4xPnm7QugxTowbAI5CZaTYSf2qkl4t5CTNKB8EhWixDYJl1Rhvz5wmhS86Zm3gm5MafXxbfjwdCHSvQb7rxrZ3OFiiVvcHKSPH-z7O7HT89uDbaEpTZNsKeICjbdxvA9cLpKx6VOZ8eK5pyyguqfRgYfmTVOf1sB1cj06ESOQshIXFxp9c2ZH003d6qZeag3T_2hAbIkbowvCtvymvDBLA" />
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <h4 class="text-lg font-bold group-hover:text-primary transition-colors">Civil
+                                    Infrastructure Specialist</h4>
+                                <span class="material-symbols-outlined text-tertiary-fixed-dim text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                            </div>
+                            <div class="flex flex-wrap gap-4 mt-2">
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">location_on</span> Washington, D.C.
+                                </span>
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">payments</span> GS-13 Grade
+                                </span>
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 5 hours ago
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="bg-primary-container/10 text-primary font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Govt
+                            Job</span>
+                        <button
+                            class="border border-primary text-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-primary hover:text-on-primary transition-all">Apply
+                            Now</button>
+                    </div>
+                </div>
+                <!-- Job Listing Item 3 -->
+                <div
+                    class="bg-surface-container-lowest p-6 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-xl transition-all duration-300 group border border-transparent hover:border-primary/10">
+                    <div class="flex items-center gap-6">
+                        <div class="w-16 h-16 bg-surface-container rounded-xl flex items-center justify-center p-3">
+                            <img alt="Stripe" class="w-full h-full object-contain" data-alt="Stripe company logo"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9AVZD3-rybblFQdBsD1AZ0NTJTEWTpBxJcqdNRljR2l4T6NLIEA3SNrhq1Pf7--9O_BEHEm-aFm8KkmYDcGr56BHkwkKrn4N2LUKp-h2uHP0aUCWWhfrnu0jpbhwlCBWeaaXOMpoxtSuJsYJqFHS7XKByM8md6i9dVYKl9eB8CjR2ehHdHeMdt8jTn0nzhIp4vGf9bCyiqBp-VYupuzpV3b-IUjXW1K1FUIYnpzAIY06_QL7-KbaOYC1_zFr3Ba2_SohrWk_oIUM" />
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold group-hover:text-primary transition-colors">Senior Product
+                                Designer</h4>
+                            <div class="flex flex-wrap gap-4 mt-2">
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">location_on</span> Remote, Global
+                                </span>
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">payments</span> $140k - $190k
+                                </span>
+                                <span class="flex items-center gap-1 text-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 1 day ago
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span
+                            class="bg-secondary-container/10 text-secondary font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Remote</span>
+                        <button
+                            class="border border-primary text-primary px-6 py-2 rounded-full font-bold text-sm hover:bg-primary hover:text-on-primary transition-all">Apply
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <button
+                    class="text-primary font-bold py-3 px-8 rounded-full border-2 border-primary/20 hover:bg-primary/5 transition-all">Show
+                    More Opportunities</button>
+            </div>
+        </div>
+    </section>
+    <!-- Latest Articles -->
+    <section class="py-24 px-8 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold font-headline mb-16 text-center">Insights for the Modern Professional</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="articles-container">
+                <!-- Articles injected via JS -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Expert Mentors -->
+    <section class="py-24 px-8 bg-surface-container-low" id="mentors-section">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold font-headline text-on-surface mb-4">Expert Mentors</h2>
+                    <p class="text-on-surface-variant max-w-xl">Get 1-on-1 guidance from industry leaders and accelerate your career path.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8" id="mentors-container">
+                <!-- Mentors injected via JS -->
+            </div>
+        </div>
+    </section>
+    <!-- Success Stories -->
+    <section class="py-24 px-8 bg-primary relative overflow-hidden">
+        <!-- Background shapes -->
+        <div class="absolute -right-24 -top-24 w-96 h-96 bg-primary-dim/30 rounded-full blur-3xl"></div>
+        <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-tertiary/20 rounded-full blur-3xl"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 text-on-primary">
+            <span class="material-symbols-outlined text-tertiary-fixed text-6xl mb-8">format_quote</span>
+            <p class="text-3xl md:text-4xl font-headline font-medium leading-relaxed mb-12 italic">
+                "CareerCue didn't just help me find a job; it helped me find my path. The masterclasses gave me the edge
+                I needed to transition from a junior developer to a Lead role at a Fortune 500 company within just 12
+                months."
+            </p>
+            <div class="flex flex-col items-center">
+                <img alt="Sarah Jenkins" class="w-20 h-20 rounded-full border-4 border-on-primary/20 mb-4 object-cover"
+                    data-alt="Portrait of a professional man with short dark hair and a confident, warm expression"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSs0g_3gxA_DXqbY1S17g6PcilTUcfU8QTneGZk5EqsneNwo-1pdN66QFOYQMyBRM3GvtvZSJuw9r-x6GsfY-KYFDjqjJ-8AZFCqjICRp0E43Znlqz98Puc8ljD4DT0NhWsxLQL0idJyOUPgdNHqx2DZuH4e6vmVYorYZInB8G-gL6vKorsp-hj9r06o9ParlPZ1b_Q6OFG0RdZJIssRV1QMEThSw028FrgnTtxGWneEKuc6LQamTC_lf98NnnjoxFcqBxWOgZ3BY" />
+                <h5 class="text-xl font-bold">David Chen</h5>
+                <p class="text-on-primary/60 font-medium">Lead Software Engineer @ Microsoft</p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="bg-slate-50 dark:bg-slate-950 w-full py-12 px-8 mt-20 border-t border-slate-200/50 dark:border-slate-800/50 font-['Inter'] text-sm">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <!-- Brand & Tagline -->
+            <div class="col-span-1">
+                <span class="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 block">CareerCue</span>
+                <p class="text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">The global platform for professional
+                    growth, high-impact careers, and curated certifications.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">public</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">chat</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-slate-200/50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-violet-600 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined text-lg">share</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Links Column 1 -->
+            <div>
+                <h5 class="font-bold text-slate-900 dark:text-slate-50 mb-6 uppercase tracking-widest text-xs">Platform
+                </h5>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Browse Jobs</a></li>
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Premium Courses</a></li>
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Success Stories</a></li>
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Mentorship</a></li>
+                </ul>
+            </div>
+            <!-- Links Column 2 -->
+            <div>
+                <h5 class="font-bold text-slate-900 dark:text-slate-50 mb-6 uppercase tracking-widest text-xs">Resources
+                </h5>
+                <ul class="space-y-4">
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Career Advice</a></li>
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Help Center</a></li>
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Privacy Policy</a></li>
+                    <li><a class="text-slate-500 dark:text-slate-400 hover:text-violet-500 dark:hover:text-violet-300 transition-all duration-300 underline decoration-violet-500/30 underline-offset-4"
+                            href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <!-- Newsletter -->
+            <div>
+                <h5 class="font-bold text-slate-900 dark:text-slate-50 mb-6 uppercase tracking-widest text-xs">Stay
+                    Updated</h5>
+                <p class="text-slate-500 dark:text-slate-400 mb-6">Get weekly curated opportunities and career insights
+                    delivered to your inbox.</p>
+                <div class="flex gap-2">
+                    <input id="newsletter-email"
+                        class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg px-4 py-2 flex-1 text-sm focus:ring-2 focus:ring-violet-600 transition-all"
+                        placeholder="email@company.com" type="email" />
+                    <button id="newsletter-btn" class="bg-violet-600 text-white p-2 rounded-lg hover:bg-violet-700 transition-all">
+                        <span class="material-symbols-outlined">send</span>
+                    </button>
+                </div>
+                <div class="mt-8">
+                    <h5 class="font-bold text-slate-900 dark:text-slate-50 mb-4 text-xs">Download App</h5>
+                    <div class="flex gap-4">
+                        <div
+                            class="bg-slate-900 text-white px-3 py-1.5 rounded-lg flex items-center gap-2 cursor-pointer hover:bg-slate-800 transition-colors">
+                            <span class="material-symbols-outlined">phone_iphone</span>
+                            <span class="text-[10px] leading-tight">Download on the<br /><span
+                                    class="text-sm font-bold">App Store</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-200/50 dark:border-slate-800/50 flex justify-between items-center text-slate-400 text-xs">
+            <span>© 2024 CareerCue. All rights reserved.</span>
+            <div class="flex gap-8">
+                <a class="hover:text-violet-500 transition-colors" href="#">About Us</a>
+                <a class="hover:text-violet-500 transition-colors" href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
